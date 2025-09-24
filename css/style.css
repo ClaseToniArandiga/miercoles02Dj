@@ -1,0 +1,95 @@
+@import url(normalize.css);
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* ROOT Y VARIABLES */
+/* Fondo aside #F59F3D, Fondo header #27B13A, Fondo main: none, Fondo footer #A717D7, */
+:root {
+    --color-primario: #27B13A;
+    --color-secundario: #F59F3D;
+    --color-terciario: #A717D7;
+    
+    --fondo-header: var(--color-primario);
+    --fondo-aside: var(--color-secundario);
+    --fondo-footer: var(--color-terciario);
+}
+
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.inter-black {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+
+header {
+    background-color: var(--fondo-header);
+    height: 10dvh;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 60dvh 10dvh;
+    grid-template-areas:   
+        "aside main"
+        "aside footer";
+    height: 90dvh;
+
+}
+
+aside{
+    background-color: var(--fondo-aside);
+    width: 100%;
+    height: 90dvh;
+    grid-area: aside;
+}
+
+main {
+    
+    height: 70dvh;
+    background-color: rgb(169, 98, 98);
+    grid-area: main;
+    overflow-y: auto;
+    
+    h1{
+        font-size: 1rem;
+        grid-area: titulo;
+    }
+    p{
+        font-size: 0.8rem;
+        grid-area: parrafo;
+    }
+    img{
+        grid-area: img;
+        width: 50%;
+        height: auto;
+        
+       
+    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "titulo titulo"
+        "parrafo img";
+
+    
+    padding: 1rem;
+    
+}
+
+footer {
+    background-color: var(--fondo-footer);
+    height: 30dvh;
+    grid-area: footer;
+}
